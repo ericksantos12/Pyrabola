@@ -1,24 +1,5 @@
-from math import sqrt
+from bhaskara import bhaskara
 from time import sleep
-
-def bhaskara(a, b, c):
-    x1 = 0
-    x2 = 0
-    delta = pow(b, 2) - 4 * a * c
-    
-    try:
-        x1 = (-b + sqrt(delta)) / 2*a
-        x2 = (-b - sqrt(delta)) / 2*a
-    except ValueError:
-        return {
-            "x1": 'Indefinido',
-            "x2": 'Indefinido'
-        }
-    else:
-        return {
-            "x1": x1,
-            "x2": x2
-        }
 
 def coeficiente():
     a = 0
@@ -30,11 +11,13 @@ def coeficiente():
     a = float(input('a = '))
     b = float(input('b = '))
     c = float(input('c = '))
-    print(f'\nEquação: {a}x² + {b}x + {c}')
-    sleep(1)
+    print(f'\nEquação: {a}x² + {b}x + {c}')    
     
     calculo = bhaskara(a, b, c)
+    
     print(f'Resultado:\nx1 = {calculo["x1"]}\nx2 = {calculo["x2"]}')
+    
+    sleep(3)
     
 
 if __name__ == "__main__":
@@ -42,17 +25,21 @@ if __name__ == "__main__":
     
     print('Bem vindo ao Função-inator!')
     while True:
-        opcao = int(input('''
+        try:
+            opcao = int(input('''
 (1) Achar coeficientes
 (2) Criar tabela
 (0) Fechar Programa
 > '''))
-        match opcao:
-            case 1:
-                coeficiente()
-            case 2:
-                print('opcao 2')
-            case 0:
-                break
-            case _:
-                print('Opção invalida')
+        except ValueError:
+            print('Opção Inválida')
+        else:
+            match opcao:
+                case 1:
+                    coeficiente()
+                case 2:
+                    print('opcao 2')
+                case 0:
+                    break
+                case _:
+                    print('Opção Inválida')
