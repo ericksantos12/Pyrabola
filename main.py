@@ -1,6 +1,10 @@
 from coeficiente import coeficiente
 from tabela import tabela
 
+_a = 0
+_b = 0
+_c = 0
+
 def menu():
     return int(input('''
 (1) Alterar valores
