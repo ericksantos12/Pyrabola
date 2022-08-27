@@ -2,6 +2,14 @@ from tabulate import tabulate
 from time import sleep
 
 def tabela(a, b, c):
+    """Método para imprimir a tabela de criação de gráfico de uma função quadrática
+
+    Args:
+        a (integer): Primeiro coeficiente da função
+        b (integer): Segundo coeficiente da função
+        c (integer): Terceiro coeficiente da função
+    """
+    
     x = 0
     matriz = []
     
