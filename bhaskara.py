@@ -9,7 +9,7 @@ def bhaskara(a, b, c):
         c (integer): Terceiro coeficiente da fórmula
 
     Returns:
-        dict: Dicionário contendo as duas raízes como resultado do cálculo, caso o delta seja negativo ele retornará seus valores como 'Indefinido'
+        dict: Dicionário contendo as duas raízes como resultado do cálculo, caso o delta seja negativo ele retornará seus valores como 'Indefinido' (x1 : x2)
     """
     
     x1 = 0
